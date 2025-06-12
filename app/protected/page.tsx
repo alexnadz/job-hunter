@@ -1,14 +1,14 @@
-import { redirect } from "next/navigation";
+import { redirect } from 'next/navigation';
 
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from '@/lib/shared/services/supabase/server';
 
 export default async function ProtectedPage() {
-  const supabase = await createClient();
+    const supabase = await createClient();
 
-  const { data, error } = await supabase.auth.getUser();
-  if (error || !data?.user) {
-    redirect("/auth/login");
-  }
+    const { data, error } = await supabase.auth.getUser();
+    if (error || !data?.user) {
+        redirect('/auth/login');
+    }
 
-  return "ProtectedPage";
+    return 'ProtectedPage';
 }

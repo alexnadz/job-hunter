@@ -1,33 +1,35 @@
-import type { Metadata } from "next";
-import { Geist } from "next/font/google";
-import { ThemeProvider } from "next-themes";
-import { PropsWithChildren } from "react";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Geist } from 'next/font/google';
+import { ThemeProvider } from 'next-themes';
+import { PropsWithChildren } from 'react';
+import { Toaster } from 'sonner';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Job Hunter",
-  description: "",
+    title: 'Job Hunter',
+    description: '',
 };
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  display: "swap",
-  subsets: ["latin"],
+    variable: '--font-geist-sans',
+    display: 'swap',
+    subsets: ['latin'],
 });
 
 const RootLayout = ({ children }: PropsWithChildren) => (
-  <html lang="en" suppressHydrationWarning>
-    <body className={`${geistSans.className} antialiased`}>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
-      >
-        {children}
-      </ThemeProvider>
-    </body>
-  </html>
+    <html lang="en" suppressHydrationWarning>
+        <body className={`${geistSans.className}`}>
+            <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+            >
+                <div className="relative flex min-h-screen flex-col">{children}</div>
+                <Toaster position="top-right" richColors />
+            </ThemeProvider>
+        </body>
+    </html>
 );
 
 export default RootLayout;

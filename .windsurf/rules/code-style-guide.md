@@ -28,23 +28,18 @@ trigger: always_on
   /profile
   page.tsx
 
-  /employer
-  /dashboard
-  page.tsx
-  /jobs
-  page.tsx
+    /employer
+    /dashboard
+    page.tsx
+    /jobs
+    page.tsx
 
-/routes
-/candidate
+/lib
+/sign-up
 /types
-/services
 /components
-
-/employer
-/types
-/services
-/components
-
+/post-job-offer
+/shared
 /lib
 /types
 /components
@@ -107,7 +102,7 @@ export default HomePage;'
 # Styling & UI
 
 - Use Tailwind CSS for styling.
-- Use Shadcn UI (shadcn package) for components.
+- Use Shadcn UI (shadcn package) for components as much as possible.
   'npx shadcn@latest add button'
 - pages should be responsive
 

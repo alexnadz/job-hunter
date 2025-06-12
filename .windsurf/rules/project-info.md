@@ -38,11 +38,15 @@ trigger: always_on
 - Redirect to appropriate dashboard based on role:
     - Candidates → `/candidate/dashboard`
     - Employers → `/employer/dashboard`
-- On the dashboard page user see warning about email confirmation, untill they confirm dashboard will only containy this warnign with sign out button
+- On the dashboard page user see warning about email confirmation, until they confirm dashboard will only containy this warnign with sign out button
 
 #### Additional Links
 
 - Link to Sign In page if the user already has an account
+
+#### Additional Info
+
+- There should be used auth table from supabase, new profiles table for user type info and employeers/candidates tables for storing specifi users data
 
 ### 2. Sign In
 

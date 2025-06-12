@@ -26,6 +26,7 @@ render={({ field }) => (
 <FormItem>
 <FormLabel>{label}</FormLabel>
 <FormControl>
+
 <div className="relative">
 <Input type={type} placeholder={placeholder} {...field} />
 </div>
@@ -42,7 +43,7 @@ const JOB_OFFER_DEFAULT_FORM_VALUES: JobOfferFormFields = {
 title: '',
 };
 
-export const JobOfferForm = () => {
+export const JobOfferFormContent = () => {
 const form = useForm<JobOfferFormFields>({
 resolver: zodResolver(JobOfferSchema),
 defaultValues: JOB_OFFER_DEFAULT_FORM_VALUES,
@@ -128,3 +129,23 @@ title: z
 });
 
 export type JobOfferFormFields = z.infer<typeof JobOfferSchema>;
+
+# export page
+
+const SignUpPage = () => (
+
+<div className="container flex h-screen w-screen flex-col items-center justify-center">
+SignUpPage
+</div>
+);
+
+export default SignUpPage;
+
+# export component
+
+export const Component= () => (
+
+<div className="container flex h-screen w-screen flex-col items-center justify-center">
+Component
+</div>
+);

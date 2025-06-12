@@ -1,7 +1,7 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren } from 'react';
 
 const ProtectedLayout = ({ children }: PropsWithChildren) => {
-  return { children };
+    return { children };
 };
 
 export default ProtectedLayout;
