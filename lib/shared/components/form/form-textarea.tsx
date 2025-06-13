@@ -1,13 +1,7 @@
 import { Control, FieldValues, Path } from 'react-hook-form';
 
-import {
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from '@/lib/shared/components/ui/form';
-import { Textarea } from '@/lib/shared/components/ui/textarea';
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/lib/shared/ui/form';
+import { Textarea } from '@/lib/shared/ui/textarea';
 
 type FormTextareaProps<FormFieldsValues extends FieldValues> = {
     control: Control<FormFieldsValues, unknown>;

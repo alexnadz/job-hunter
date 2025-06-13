@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Card, CardContent } from '@/lib/shared/components/ui/card';
+import { Card, CardContent } from '@/lib/shared/ui/card';
 
 type FormLayoutProps = {
     children: ReactNode;

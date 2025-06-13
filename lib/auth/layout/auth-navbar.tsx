@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from '@/lib/shared/components/ui/button';
+import { Button } from '@/lib/shared/ui/button';
 import { NavbarBase } from '@/lib/shared';
 
 export const AuthNavbar = () => {

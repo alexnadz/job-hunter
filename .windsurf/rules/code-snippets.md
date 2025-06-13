@@ -149,3 +149,36 @@ export const Component= () => (
 Component
 </div>
 );
+
+# pathnames
+
+export const PATHNAMES = {
+public: {
+HOME: '/',
+},
+
+    auth: {
+        SIGN_UP: '/auth/sign-up',
+        SIGN_UP_EMPLOYER: '/auth/sign-up/employer',
+        SIGN_UP_CANDIDATE: '/auth/sign-up/candidate',
+        SIGN_UP_SUCCESS: '/auth/sign-up/success',
+        SIGN_IN: '/auth/sign-in',
+        EMAIL_CONFIRM_CALLBACK: '/api/auth/email-confirm',
+        AUTH_CODE_ERROR: '/auth/auth-code-error',
+    },
+
+    protected: {
+        ROOT: '/protected',
+    },
+
+    employer: {
+        DASHBOARD: '/employer/dashboard',
+        JOBS: '/employer/jobs',
+    },
+
+    candidate: {
+        DASHBOARD: '/candidate/dashboard',
+        PROFILE: '/candidate/profile',
+    },
+
+} as const;

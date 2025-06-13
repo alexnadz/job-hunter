@@ -1,14 +1,8 @@
 import { HTMLInputTypeAttribute } from 'react';
 import { Control, FieldValues, Path } from 'react-hook-form';
 
-import {
-    FormControl,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from '@/lib/shared/components/ui/form';
-import { Input } from '@/lib/shared/components/ui/input';
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/lib/shared/ui/form';
+import { Input } from '@/lib/shared/ui/input';
 
 type FormInputProps<FormFieldsValues extends FieldValues> = {
     control: Control<FormFieldsValues, unknown>;

@@ -18,7 +18,9 @@ const geistSans = Geist({
 
 const RootLayout = ({ children }: PropsWithChildren) => (
     <html lang="en" suppressHydrationWarning>
-        <body className={`${geistSans.className}`}>
+        <body
+        // className={`${geistSans.className}`}
+        >
             <ThemeProvider
                 attribute="class"
                 defaultTheme="system"

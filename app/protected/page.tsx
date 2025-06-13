@@ -1,14 +1,23 @@
 import { redirect } from 'next/navigation';
 
 import { createClient } from '@/lib/shared/services/supabase/server';
+import { LogoutButton } from '@/lib/shared';
 
 export default async function ProtectedPage() {
     const supabase = await createClient();
 
     const { data, error } = await supabase.auth.getUser();
     if (error || !data?.user) {
-        redirect('/auth/login');
+        // TODO:
+        redirect('/');
     }
 
-    return 'ProtectedPage';
+    return (
+        <>
+            {data.user.email}
+            <LogoutButton />
+        </>
+    );
+
+    // return 'ProtectedPage';
 }

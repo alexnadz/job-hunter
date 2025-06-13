@@ -20,6 +20,7 @@ trigger: always_on
 - Store consts for component in component-name.consts.ts file (if there are many consts).
 - Store types for component in component-name.types.ts file (if there are many types).
 - Use index.ts for exporting files where it is possible
+- for paths use constsfrom pathnames object
 - example of sctructure:
   /app
   /candidate
@@ -54,6 +55,7 @@ trigger: always_on
 
 # Imports and exports
 
+- use absolute import, dont use smth like '../path', '../../path'. Acceptable only: './path'.
 - imports should have order. firstly import form react/next js, then from other libraries, then from local files, etc. Each group shoulbe be diveide by new line
 - Use default exports for pages and layouts
   'const HomePage = () => {

@@ -6,31 +6,29 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { startTransition } from 'react';
 import { toast } from 'sonner';
 
-import { Button } from '@/lib/shared/components/ui/button';
-import { Form } from '@/lib/shared/components/ui/form';
+import { Button } from '@/lib/shared/ui/button';
+import { Form } from '@/lib/shared/ui/form';
 import { FormInput, FormTextarea } from '@/lib/shared/components/form';
 import { ActionResultStatus } from '@/lib/shared/types/action-result.types';
+import { PATHNAMES } from '@/lib/shared/consts';
+import { useRouter } from 'next/navigation';
 import {
     EmployerSignUpFormFields,
     EmployerSignUpSchema,
-} from '../schemas/employer-sign-up.schemas';
-import { signUpEmployer } from '../actions/employer-sign-up.actions';
-
-type Employer = {
-    id: string;
-    email: string;
-    companyName: string;
-    aboutCompany: string;
-};
+} from '../../schemas/employer-sign-up.schemas';
+import { signUpEmployer } from '../../actions/employer-sign-up.actions';
 
 const EMPLOYER_SIGN_UP_DEFAULT_VALUES: EmployerSignUpFormFields = {
     email: '',
     password: '',
+    confirmPassword: '',
     companyName: '',
     aboutCompany: '',
 };
 
 export const EmployerSignUpFormContent = () => {
+    const router = useRouter();
+
     const form = useForm<EmployerSignUpFormFields>({
         resolver: zodResolver(EmployerSignUpSchema),
         defaultValues: EMPLOYER_SIGN_UP_DEFAULT_VALUES,
@@ -45,19 +43,13 @@ export const EmployerSignUpFormContent = () => {
     useEffect(() => {
         if (actionStatus === ActionResultStatus.SUCCESS) {
             form.reset(EMPLOYER_SIGN_UP_DEFAULT_VALUES);
-            toast.success('Account created successfully', {
-                description: 'You will be redirected to the dashboard shortly',
-            });
-
-            setTimeout(() => {
-                window.location.href = '/employer/dashboard';
-            }, 2000);
+            router.push(PATHNAMES.auth.SIGN_UP_SUCCESS);
         } else if (actionStatus === ActionResultStatus.ERROR && actionError) {
             toast.error('Error creating account', {
                 description: actionError,
             });
         }
-    }, [actionStatus, actionError, form]);
+    }, [actionStatus, actionError, form, router]);
 
     const handleSubmitWithTransition = (employerSignUpFormFields: EmployerSignUpFormFields) =>
         startTransition(() => executeAction(employerSignUpFormFields));
@@ -65,6 +57,21 @@ export const EmployerSignUpFormContent = () => {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(handleSubmitWithTransition)} className="space-y-4">
+                <FormInput
+                    control={form.control}
+                    name="companyName"
+                    label="Company Name"
+                    placeholder="Enter your company name"
+                />
+
+                <FormTextarea
+                    control={form.control}
+                    name="aboutCompany"
+                    label="About Company"
+                    placeholder="Tell us about your company"
+                    rows={4}
+                />
+
                 <FormInput
                     control={form.control}
                     name="email"
@@ -83,17 +90,10 @@ export const EmployerSignUpFormContent = () => {
 
                 <FormInput
                     control={form.control}
-                    name="companyName"
-                    label="Company Name"
-                    placeholder="Enter your company name"
-                />
-
-                <FormTextarea
-                    control={form.control}
-                    name="aboutCompany"
-                    label="About Company"
-                    placeholder="Tell us about your company"
-                    rows={4}
+                    name="confirmPassword"
+                    type="password"
+                    label="Confirm Password"
+                    placeholder="Confirm your password"
                 />
 
                 <Button type="submit" className="w-full" disabled={isActionPending}>
