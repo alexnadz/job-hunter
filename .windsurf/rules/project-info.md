@@ -11,7 +11,7 @@ trigger: always_on
 
 ## version 1.0.0
 
-### 2. Sign Up
+### 1. Sign Up
 
 #### Features
 
@@ -53,13 +53,6 @@ trigger: always_on
 #### Features
 
 - **Email + Password Authentication**
-- **Role Selection**
-    - **Candidate** must fill in:
-        - First Name
-        - Last Name
-        - Phone Number
-    - **Employer** must fill in:
-        - About Company
 
 #### Role-Based Redirection After Login
 

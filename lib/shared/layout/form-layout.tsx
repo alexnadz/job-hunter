@@ -3,12 +3,19 @@ import { Card, CardContent } from '@/lib/shared/ui/card';
 
 type FormLayoutProps = {
     children: ReactNode;
-    title?: string;
-    description?: string;
+    title?: ReactNode;
+    description?: ReactNode;
+    footer?: ReactNode;
     className?: string;
 };
 
-export const FormLayout = ({ children, title, description, className = '' }: FormLayoutProps) => (
+export const FormLayout = ({
+    children,
+    title,
+    description,
+    footer,
+    className = '',
+}: FormLayoutProps) => (
     <Card className={`w-full p-6 ${className}`}>
         <CardContent className="p-0 space-y-6">
             {(title || description) && (
@@ -18,6 +25,7 @@ export const FormLayout = ({ children, title, description, className = '' }: For
                 </div>
             )}
             {children}
+            {footer}
         </CardContent>
     </Card>
 );

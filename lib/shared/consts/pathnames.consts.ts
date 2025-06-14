@@ -18,12 +18,12 @@ export const PATHNAMES = {
     },
 
     employer: {
-        DASHBOARD: '/employer/dashboard',
-        JOBS: '/employer/jobs',
+        DASHBOARD: '/protected/employer/dashboard',
+        JOBS: '/protected/employer/jobs',
     },
 
     candidate: {
-        DASHBOARD: '/candidate/dashboard',
+        DASHBOARD: '/protected/candidate/dashboard',
         PROFILE: '/candidate/profile',
     },
 } as const;

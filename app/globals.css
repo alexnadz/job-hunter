@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
+    /* :root {
         --background: 0 0% 100%;
         --foreground: 0 0% 3.9%;
         --card: 0 0% 100%;
@@ -55,6 +55,58 @@
         --chart-3: 30 80% 55%;
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
+    } */
+
+    :root {
+        /* Primary: Tailwind Blue 500 */
+        --primary: 217 91% 60%;
+        --primary-foreground: 0 0% 100%;
+
+        /* Secondary: Tailwind Gray 100 */
+        --secondary: 210 20% 98%;
+        --secondary-foreground: 217 91% 40%;
+
+        /* Destructive: Red 500 */
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+
+        /* Muted: Gray 200 */
+        --muted: 210 16% 93%;
+        --muted-foreground: 215 20% 30%;
+
+        /* Accent: Indigo 500 */
+        --accent: 243 75% 59%;
+        --accent-foreground: 0 0% 100%;
+
+        /* Border & background */
+        --border: 0 0% 89.8%;
+        --input: 0 0% 89.8%;
+        --ring: 217 91% 60%;
+        --background: 0 0% 100%;
+        --foreground: 222 47% 11%;
+    }
+
+    .dark {
+        --primary: 217 91% 55%;
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 210 10% 25%;
+        --secondary-foreground: 0 0% 100%;
+
+        --destructive: 0 62% 50%;
+        --destructive-foreground: 0 0% 100%;
+
+        --muted: 215 16% 22%;
+        --muted-foreground: 220 15% 65%;
+
+        --accent: 243 75% 59%;
+        --accent-foreground: 0 0% 100%;
+
+        --border: 215 16% 25%;
+        --input: 215 16% 25%;
+        --ring: 217 91% 55%;
+        --background: 222 47% 11%;
+        --foreground: 210 20% 98%;
     }
 }
 

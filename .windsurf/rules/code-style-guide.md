@@ -21,6 +21,7 @@ trigger: always_on
 - Store types for component in component-name.types.ts file (if there are many types).
 - Use index.ts for exporting files where it is possible
 - for paths use constsfrom pathnames object
+- if there are several components connected by parent-child chain then you can group them in one folder
 - example of sctructure:
   /app
   /candidate
