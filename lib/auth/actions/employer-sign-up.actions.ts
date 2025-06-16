@@ -2,7 +2,7 @@
 
 import { ActionResult, ActionResultStatus } from '@/lib/shared/types/action-result.types';
 import { createClient } from '@/lib/shared/services/supabase/server';
-import { PATHNAMES } from '@/lib/shared/consts';
+import { PATHNAMES } from '@/lib/shared/constants';
 import { EmployerSignUpFormFields } from '../schemas/employer-sign-up.schemas';
 
 type Employer = {

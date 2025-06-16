@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 
 import { createClient } from '@/lib/shared/services/supabase/server';
-import { LogoutButton } from '@/lib/shared';
+import { SignOutButton } from '@/lib/shared';
 
 export default async function ProtectedPage() {
     const supabase = await createClient();
@@ -15,7 +15,7 @@ export default async function ProtectedPage() {
     return (
         <>
             {data.user.email}
-            <LogoutButton />
+            <SignOutButton />
         </>
     );
 

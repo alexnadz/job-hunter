@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/shared/services/supabase/server';
 import { SignInFormFields } from '../schemas/sign-in.schemas';
 import { ActionResult, ActionResultStatus } from '@/lib/shared/types/action-result.types';
-import { PATHNAMES } from '@/lib/shared/consts';
+import { PATHNAMES } from '@/lib/shared/constants';
 
 export const signIn = async (
     _: ActionResult<void>,

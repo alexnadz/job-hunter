@@ -7,7 +7,7 @@ import {
     CardHeader,
     CardTitle,
 } from '@/lib/shared/ui/card';
-import { PATHNAMES } from '@/lib/shared/consts';
+import { PATHNAMES } from '@/lib/shared/constants';
 import { MailCheck } from 'lucide-react';
 import Link from 'next/link';
 

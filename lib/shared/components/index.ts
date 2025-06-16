@@ -1,1 +1,1 @@
-export * from './logout-button';
+export * from './sign-out-button';

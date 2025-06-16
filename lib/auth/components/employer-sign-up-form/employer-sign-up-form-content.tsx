@@ -10,7 +10,7 @@ import { Button } from '@/lib/shared/ui/button';
 import { Form } from '@/lib/shared/ui/form';
 import { FormInput, FormTextarea } from '@/lib/shared/components/form';
 import { ActionResultStatus } from '@/lib/shared/types/action-result.types';
-import { PATHNAMES } from '@/lib/shared/consts';
+import { PATHNAMES } from '@/lib/shared/constants';
 import { useRouter } from 'next/navigation';
 import {
     EmployerSignUpFormFields,

@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 
 import { createClient } from '@/lib/shared/services/supabase/server';
-import { LogoutButton } from '@/lib/shared';
+import { SignOutButton } from '@/lib/shared';
 
 const EmployerDashboardPage = async () => {
     const supabase = await createClient();
@@ -14,8 +14,9 @@ const EmployerDashboardPage = async () => {
 
     return (
         <>
-            {data.user.email}
-            <LogoutButton />
+            Hello
+            {/* {data.user.email}
+            <SignOutButton /> */}
         </>
     );
 };
