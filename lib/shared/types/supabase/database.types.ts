@@ -47,6 +47,47 @@ export type Database = {
           },
         ]
       }
+      job_offers: {
+        Row: {
+          created_at: string
+          description: string
+          employer_id: string
+          id: string
+          salary_max: number | null
+          salary_min: number | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          employer_id: string
+          id?: string
+          salary_max?: number | null
+          salary_min?: number | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          employer_id?: string
+          id?: string
+          salary_max?: number | null
+          salary_min?: number | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "job_offers_employer_id_fkey"
+            columns: ["employer_id"]
+            isOneToOne: false
+            referencedRelation: "employers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           created_at: string

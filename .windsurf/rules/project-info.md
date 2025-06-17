@@ -69,3 +69,39 @@ trigger: always_on
 
 - _Forgot Password?_ (optional)
 - Link to the Registration page if the user doesn’t have an account
+
+### 3. Add job offer as employer
+
+#### Features
+
+- Form for Creating Job Offers
+- Employer-Only Access (Role-Based)
+- Client and Server-Side Validation
+- Database Insertion via Server Action
+
+#### Form Fields
+
+- Job Title (required)
+- Job Description (required)
+- Salary Range (optional)
+
+#### Access Control
+
+- Only employers can access this page
+- Redirect others to /unauthorized or homepage
+
+####Backend Integration
+
+- Insert job data into jobs table
+  Associate job with current employer using their user_id
+
+####Error Handling
+
+- Missing required fields
+- Unauthorized access
+- Server/database errors on submission
+
+####After Successful Submission
+
+- Redirect to: /employer/dashboard
+- Optional toast or confirmation message: “Job offer posted successfully!”

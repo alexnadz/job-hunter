@@ -5,7 +5,7 @@ import { createClient } from '@/lib/shared/services/supabase/server';
 import { ProtectedNavbar } from '@/lib/shared/layouts/protected-navbar';
 import { EmployerSidebar } from '@/lib/shared/layouts/protected-sidebar/employer-sidebar';
 import { CandidateSidebar } from '@/lib/shared/layouts/protected-sidebar/candidate-sidebar';
-import { SidebarProvider, SidebarTrigger } from '@/lib/shared/components/ui/sidebar';
+import { SidebarProvider, SidebarTrigger } from '@/lib/shared/ui/sidebar';
 
 const ProtectedLayout = async ({ children }: PropsWithChildren) => {
     const supabase = await createClient();

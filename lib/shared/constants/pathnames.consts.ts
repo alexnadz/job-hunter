@@ -19,7 +19,7 @@ export const PATHNAMES = {
 
     employer: {
         DASHBOARD: '/protected/employer/dashboard',
-        JOBS: '/protected/employer/jobs',
+        JOB_OFFERS: '/protected/employer/job-offers',
     },
 
     candidate: {

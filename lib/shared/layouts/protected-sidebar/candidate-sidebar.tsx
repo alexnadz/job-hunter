@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { LayoutDashboard, User, FileText, Settings } from 'lucide-react';
 
 import { PATHNAMES } from '@/lib/shared/constants';
-import { SidebarMenuItem } from '@/lib/shared/components/ui/sidebar';
+import { SidebarMenuItem } from '@/lib/shared/ui/sidebar';
 import { ProtectedSidebarBase } from '@/lib/shared/layouts/protected-sidebar/protected-sidebar-base';
 
 export const CandidateSidebar = () => {

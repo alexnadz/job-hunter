@@ -9,7 +9,7 @@ import {
     SidebarGroupLabel,
     SidebarHeader,
     SidebarMenu,
-} from '@/lib/shared/components/ui/sidebar';
+} from '@/lib/shared/ui/sidebar';
 
 type ProtectedSidebarBaseProps = {
     title: string;

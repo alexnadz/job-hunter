@@ -21,30 +21,9 @@ trigger: always_on
 - Store types for component in component-name.types.ts file (if there are many types).
 - Use index.ts for exporting files where it is possible
 - for paths use constsfrom pathnames object
+- avoid such import paths '../actions/add-job-offer.action'. Use absolute or './path'
+- group imports in components and pages (external packages, local imports, and react and next.js)
 - if there are several components connected by parent-child chain then you can group them in one folder
-- example of sctructure:
-  /app
-  /candidate
-  /dashboard
-  page.tsx
-  /profile
-  page.tsx
-
-    /employer
-    /dashboard
-    page.tsx
-    /jobs
-    page.tsx
-
-/lib
-/sign-up
-/types
-/components
-/post-job-offer
-/shared
-/lib
-/types
-/components
 
 # Types and interfaces
 

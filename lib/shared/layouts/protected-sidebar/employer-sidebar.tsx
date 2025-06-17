@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { LayoutDashboard, Briefcase, Settings } from 'lucide-react';
 
 import { PATHNAMES } from '@/lib/shared/constants';
-import { SidebarMenuItem } from '@/lib/shared/components/ui/sidebar';
+import { SidebarMenuItem } from '@/lib/shared/ui/sidebar';
 import { ProtectedSidebarBase } from '@/lib/shared/layouts/protected-sidebar/protected-sidebar-base';
 
 export const EmployerSidebar = () => {
@@ -21,7 +21,7 @@ export const EmployerSidebar = () => {
             </SidebarMenuItem>
             <SidebarMenuItem>
                 <Link
-                    href={PATHNAMES.employer.JOBS}
+                    href={PATHNAMES.employer.JOB_OFFERS}
                     className="flex items-center gap-2 p-2 hover:bg-sidebar-accent rounded-md"
                 >
                     <Briefcase className="h-4 w-4" />

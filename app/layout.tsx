@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
-import { ThemeProvider } from 'next-themes';
 import { PropsWithChildren } from 'react';
 import { Toaster } from 'sonner';
 import './globals.css';
+import { AppThemeProvider } from '@/lib/shared/providers';
 
 export const metadata: Metadata = {
     title: 'Job Hunter',
@@ -18,18 +18,11 @@ const geistSans = Geist({
 
 const RootLayout = ({ children }: PropsWithChildren) => (
     <html lang="en" suppressHydrationWarning>
-        <body
-        // className={`${geistSans.className}`}
-        >
-            <ThemeProvider
-                attribute="class"
-                defaultTheme="system"
-                enableSystem
-                disableTransitionOnChange
-            >
+        <body className={`${geistSans.className}`}>
+            <AppThemeProvider>
                 <div className="relative flex min-h-screen flex-col">{children}</div>
                 <Toaster position="top-right" richColors />
-            </ThemeProvider>
+            </AppThemeProvider>
         </body>
     </html>
 );
