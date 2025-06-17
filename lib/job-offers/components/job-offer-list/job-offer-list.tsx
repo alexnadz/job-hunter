@@ -1,10 +1,9 @@
 import Link from 'next/link';
+
 import { PlusCircle } from 'lucide-react';
 
-import { Button } from '@/lib/shared/ui/button';
-import { PATHNAMES } from '@/lib/shared/constants';
-import { JobOffer } from '@/lib/shared/types/supabase';
-import { JobOfferItem } from './job-offer-item';
+import { Button, PATHNAMES, JobOffer } from '@/lib/shared';
+import { JobOfferListItem } from '@/lib/job-offers';
 
 type JobOfferListProps = {
     jobOffers: JobOffer[] | null;
@@ -15,7 +14,7 @@ export const JobOfferList = ({ jobOffers }: JobOfferListProps) => (
         {jobOffers && jobOffers.length > 0 ? (
             <div className="grid gap-4">
                 {jobOffers.map((jobOffer) => (
-                    <JobOfferItem key={jobOffer.id} jobOffer={jobOffer} />
+                    <JobOfferListItem key={jobOffer.id} jobOffer={jobOffer} />
                 ))}
             </div>
         ) : (

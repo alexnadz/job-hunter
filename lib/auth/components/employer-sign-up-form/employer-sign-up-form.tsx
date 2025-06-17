@@ -1,4 +1,4 @@
-import { FormLayout } from '@/lib/shared/layouts';
+import { FormLayout } from '@/lib/shared';
 import { EmployerSignUpFormContent } from './employer-sign-up-form-content';
 
 export const EmployerSignUpForm = () => (

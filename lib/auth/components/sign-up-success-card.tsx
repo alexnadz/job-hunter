@@ -1,15 +1,17 @@
-import { Button } from '@/lib/shared/ui/button';
+import Link from 'next/link';
+
+import { MailCheck } from 'lucide-react';
+
 import {
+    Button,
     Card,
     CardContent,
     CardDescription,
     CardFooter,
     CardHeader,
     CardTitle,
-} from '@/lib/shared/ui/card';
-import { PATHNAMES } from '@/lib/shared/constants';
-import { MailCheck } from 'lucide-react';
-import Link from 'next/link';
+    PATHNAMES,
+} from '@/lib/shared';
 
 export const SignUpSuccessCard = () => (
     <Card className="w-full max-w-md">

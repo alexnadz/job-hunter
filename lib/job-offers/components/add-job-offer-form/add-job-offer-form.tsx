@@ -1,3 +1,5 @@
+'use client';
+
 import { FormLayout } from '@/lib/shared';
 import { AddJobOfferFormContent } from './add-job-offer-form-content';
 
@@ -6,9 +8,14 @@ export const AddJobOfferForm = () => (
         <FormLayout title="Add New Job Offer">
             <AddJobOfferFormContent />
         </FormLayout>
-        {/* <h1 className="text-2xl font-bold mb-6">Add New Job Offer</h1> */}
-        {/* <div className="bg-card rounded-lg shadow p-6">
-            <AddJobOfferFormContent />
-        </div> */}
     </div>
 );
+
+{
+    /* <h1 className="text-2xl font-bold mb-6">Add New Job Offer</h1> */
+}
+{
+    /* <div className="bg-card rounded-lg shadow p-6">
+            <AddJobOfferFormContent />
+        </div> */
+}

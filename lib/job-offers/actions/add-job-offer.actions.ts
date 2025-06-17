@@ -2,18 +2,22 @@
 
 import { redirect } from 'next/navigation';
 
-import { createClient } from '@/lib/shared/services/supabase/server';
-import { PATHNAMES } from '@/lib/shared/constants';
-import { ActionResult, ActionResultStatus } from '@/lib/shared/types/action-result.types';
-import { JobOfferFormFields } from '@/lib/job-offers/schemas/job-offer.schema';
-import { JobOffer, JobOfferInsert } from '@/lib/shared';
+import {
+    createServerClient,
+    PATHNAMES,
+    ActionResult,
+    ActionResultStatus,
+    JobOffer,
+    JobOfferInsert,
+} from '@/lib/shared';
+import { JobOfferFormFields } from '@/lib/job-offers/schemas';
 
 export const addJobOffer = async (
     _: ActionResult<JobOffer>,
     formData: JobOfferFormFields,
 ): Promise<ActionResult<JobOffer>> => {
     try {
-        const supabase = await createClient();
+        const supabase = await createServerClient();
 
         // Get the current session
         const {

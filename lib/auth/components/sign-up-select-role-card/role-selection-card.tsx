@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Button } from '@/lib/shared/ui/button';
+
+import { Button } from '@/lib/shared';
 
 type RoleSelectionCardProps = {
     href: string;

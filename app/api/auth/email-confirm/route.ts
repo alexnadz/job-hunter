@@ -1,9 +1,9 @@
-import { type EmailOtpType } from '@supabase/supabase-js';
 import { type NextRequest } from 'next/server';
-
-import { createClient } from '@/lib/shared/services/supabase/server';
-import { PATHNAMES } from '@/lib/shared/constants';
 import { redirect } from 'next/navigation';
+
+import { type EmailOtpType } from '@supabase/supabase-js';
+
+import { createServerClient, PATHNAMES } from '@/lib/shared';
 
 export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
     const next = searchParams.get('next') ?? PATHNAMES.public.HOME;
 
     if (token_hash && type) {
-        const supabase = await createClient();
+        const supabase = await createServerClient();
 
         const { error } = await supabase.auth.verifyOtp({
             type,

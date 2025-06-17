@@ -1,4 +1,4 @@
-import { EmployerSignUpForm } from '@/lib/auth/components';
+import { EmployerSignUpForm } from '@/lib/auth';
 
 const EmployerSignUpPage = () => (
     <div className="flex h-screen w-full flex-col items-center justify-center">

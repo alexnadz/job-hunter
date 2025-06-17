@@ -1,18 +1,14 @@
 'use client';
 
-import { useActionState, useEffect } from 'react';
+import { useEffect, startTransition, useActionState } from 'react';
+
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { startTransition } from 'react';
 import { toast } from 'sonner';
 
-import { Button } from '@/lib/shared/ui/button';
-import { Form } from '@/lib/shared/ui/form';
-import { FormInput } from '@/lib/shared/components/form/form-input';
-import { FormTextarea } from '@/lib/shared/components/form/form-textarea';
-import { JobOfferFormFields, JobOfferSchema } from '../../schemas/job-offer.schema';
-import { addJobOffer } from '../../actions/add-job-offer.actions';
-import { ActionResultStatus } from '@/lib/shared/types/action-result.types';
+import { Button, Form, FormInput, FormTextarea, ActionResultStatus } from '@/lib/shared';
+import { JobOfferFormFields, JobOfferSchema } from '@/lib/job-offers/schemas';
+import { addJobOffer } from '@/lib/job-offers/actions';
 
 const JOB_OFFER_DEFAULT_FORM_VALUES: JobOfferFormFields = {
     title: '',

@@ -35,6 +35,7 @@ trigger: always_on
 
 # Imports and exports
 
+- create index.ts files for exporting content (reexport only sych things which will be used outside of current folders). Ignore for first level of lib folder
 - use absolute import, dont use smth like '../path', '../../path'. Acceptable only: './path'.
 - imports should have order. firstly import form react/next js, then from other libraries, then from local files, etc. Each group shoulbe be diveide by new line
 - Use default exports for pages and layouts

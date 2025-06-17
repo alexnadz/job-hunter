@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
 import { PropsWithChildren } from 'react';
+
 import { Toaster } from 'sonner';
+
+import { AppThemeProvider } from '@/lib/shared';
 import './globals.css';
-import { AppThemeProvider } from '@/lib/shared/providers';
 
 export const metadata: Metadata = {
     title: 'Job Hunter',

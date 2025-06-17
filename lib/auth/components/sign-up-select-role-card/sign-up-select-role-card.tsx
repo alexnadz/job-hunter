@@ -1,9 +1,9 @@
 import Link from 'next/link';
+
 import { User, Briefcase, Users } from 'lucide-react';
 
-import { Card, CardContent } from '@/lib/shared/ui/card';
+import { Card, CardContent, PATHNAMES } from '@/lib/shared';
 import { RoleSelectionCard } from './role-selection-card';
-import { PATHNAMES } from '@/lib/shared';
 
 export const SignUpSelectRoleCard = () => (
     <Card className="w-[400px] p-6">

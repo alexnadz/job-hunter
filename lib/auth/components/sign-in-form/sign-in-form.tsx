@@ -1,8 +1,8 @@
 import Link from 'next/link';
+
 import { LogIn } from 'lucide-react';
 
-import { FormLayout } from '@/lib/shared/layouts/form-layout';
-import { PATHNAMES } from '@/lib/shared/constants';
+import { FormLayout, PATHNAMES } from '@/lib/shared';
 import { SignInFormContent } from './sign-in-form-content';
 
 export const SignInForm = () => (

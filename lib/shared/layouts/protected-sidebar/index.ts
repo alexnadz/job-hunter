@@ -1,2 +1,2 @@
-export * from './employer-sidebar';
 export * from './candidate-sidebar';
+export * from './employer-sidebar';

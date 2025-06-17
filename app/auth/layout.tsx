@@ -1,4 +1,5 @@
 import { PropsWithChildren } from 'react';
+
 import { AuthNavbar } from '@/lib/auth';
 
 const AuthLayout = ({ children }: PropsWithChildren) => {

@@ -1,22 +1,15 @@
 'use client';
 
-import { useActionState, useEffect } from 'react';
+import { useEffect, startTransition, useActionState } from 'react';
+import { useRouter } from 'next/navigation';
+
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { startTransition } from 'react';
 import { toast } from 'sonner';
 
-import { Button } from '@/lib/shared/ui/button';
-import { Form } from '@/lib/shared/ui/form';
-import { FormInput, FormTextarea } from '@/lib/shared/components/form';
-import { ActionResultStatus } from '@/lib/shared/types/action-result.types';
-import { PATHNAMES } from '@/lib/shared/constants';
-import { useRouter } from 'next/navigation';
-import {
-    EmployerSignUpFormFields,
-    EmployerSignUpSchema,
-} from '../../schemas/employer-sign-up.schemas';
-import { signUpEmployer } from '../../actions/employer-sign-up.actions';
+import { Button, Form, FormInput, FormTextarea, ActionResultStatus, PATHNAMES } from '@/lib/shared';
+import { EmployerSignUpFormFields, EmployerSignUpSchema } from '@/lib/auth/schemas';
+import { signUpEmployer } from '@/lib/auth/actions';
 
 const EMPLOYER_SIGN_UP_DEFAULT_VALUES: EmployerSignUpFormFields = {
     email: '',

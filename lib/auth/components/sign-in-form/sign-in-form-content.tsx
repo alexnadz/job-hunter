@@ -1,15 +1,14 @@
 'use client';
 
+import { startTransition, useEffect, useActionState } from 'react';
+
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'sonner';
-import { startTransition, useActionState, useEffect } from 'react';
 
-import { Button, Form } from '@/lib/shared';
-import { FormInput } from '@/lib/shared/components/form/form-input';
-import { ActionResultStatus } from '@/lib/shared/types/action-result.types';
-import { SignInFormFields, SignInSchema } from '@/lib/auth/schemas/sign-in.schemas';
-import { signIn } from '@/lib/auth/actions/sign-in.actions';
+import { Button, Form, FormInput, ActionResultStatus } from '@/lib/shared';
+import { SignInFormFields, SignInSchema } from '@/lib/auth/schemas';
+import { signIn } from '@/lib/auth/actions';
 
 const SIGN_IN_DEFAULT_VALUES: SignInFormFields = {
     email: '',

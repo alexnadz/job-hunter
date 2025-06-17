@@ -1,14 +1,17 @@
 import { PropsWithChildren } from 'react';
 import { redirect } from 'next/navigation';
 
-import { createClient } from '@/lib/shared/services/supabase/server';
-import { ProtectedNavbar } from '@/lib/shared/layouts/protected-navbar';
-import { EmployerSidebar } from '@/lib/shared/layouts/protected-sidebar/employer-sidebar';
-import { CandidateSidebar } from '@/lib/shared/layouts/protected-sidebar/candidate-sidebar';
-import { SidebarProvider, SidebarTrigger } from '@/lib/shared/ui/sidebar';
+import {
+    createServerClient,
+    ProtectedNavbar,
+    SidebarProvider,
+    SidebarTrigger,
+    EmployerSidebar,
+    CandidateSidebar,
+} from '@/lib/shared';
 
 const ProtectedLayout = async ({ children }: PropsWithChildren) => {
-    const supabase = await createClient();
+    const supabase = await createServerClient();
 
     // TODO:
     const {

@@ -1,14 +1,13 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
+
 import { PlusCircle } from 'lucide-react';
 
-import { createClient } from '@/lib/shared/services/supabase/server';
-import { Button } from '@/lib/shared/ui/button';
-import { PATHNAMES } from '@/lib/shared/constants';
-import { JobOfferList } from '@/lib/job-offers/components';
+import { Button, PATHNAMES, createServerClient } from '@/lib/shared';
+import { JobOfferList } from '@/lib/job-offers';
 
 const EmployerJobOffersPage = async () => {
-    const supabase = await createClient();
+    const supabase = await createServerClient();
 
     // Get the current session
     const {

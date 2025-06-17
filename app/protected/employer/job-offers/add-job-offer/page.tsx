@@ -1,11 +1,10 @@
 import { redirect } from 'next/navigation';
 
-import { createClient } from '@/lib/shared/services/supabase/server';
-import { AddJobOfferForm } from '@/lib/job-offers/components/add-job-offer-form';
-import { PATHNAMES } from '@/lib/shared/constants';
+import { createServerClient, PATHNAMES } from '@/lib/shared';
+import { AddJobOfferForm } from '@/lib/job-offers';
 
 const AddJobOfferPage = async () => {
-    const supabase = await createClient();
+    const supabase = await createServerClient();
 
     // Get the current session
     const {

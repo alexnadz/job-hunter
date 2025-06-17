@@ -1,14 +1,12 @@
-import { Database } from '@/lib/shared/types/supabase';
+import { JobOffer } from '@/lib/shared';
 
-type JobOffer = Database['public']['Tables']['job_offers']['Row'];
-
-type JobOfferItemProps = {
+type JobOfferListItemProps = {
     jobOffer: JobOffer;
 };
 
-export const JobOfferItem = ({ jobOffer }: JobOfferItemProps) => {
+export const JobOfferListItem = ({ jobOffer }: JobOfferListItemProps) => {
     return (
-        <div className="rounded-lg shadow p-6 bg-muted">
+        <div className="bg-card rounded-lg shadow p-6">
             <h2 className="text-xl font-semibold mb-2">{jobOffer.title}</h2>
             <p className="text-muted-foreground mb-4 line-clamp-2">{jobOffer.description}</p>
             <div className="flex justify-between items-center">
