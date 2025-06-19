@@ -7,16 +7,14 @@ import {
     SidebarGroup,
     SidebarGroupContent,
     SidebarGroupLabel,
-    SidebarHeader,
     SidebarMenu,
 } from '@/lib/shared/ui/sidebar';
 
 type ProtectedSidebarBaseProps = {
-    title: string;
     menuItems: ReactNode;
 };
 
-export const ProtectedSidebarBase = ({ title, menuItems }: ProtectedSidebarBaseProps) => {
+export const ProtectedSidebarBase = ({ menuItems }: ProtectedSidebarBaseProps) => {
     return (
         <Sidebar className="mt-16">
             {/* <SidebarHeader>

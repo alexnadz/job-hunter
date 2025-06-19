@@ -49,5 +49,5 @@ export const CandidateSidebar = () => {
         </>
     );
 
-    return <ProtectedSidebarBase title="Candidate Panel" menuItems={menuItems} />;
+    return <ProtectedSidebarBase menuItems={menuItems} />;
 };

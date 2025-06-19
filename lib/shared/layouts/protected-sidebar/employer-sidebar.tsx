@@ -40,5 +40,5 @@ export const EmployerSidebar = () => {
         </>
     );
 
-    return <ProtectedSidebarBase title="Employer Panel" menuItems={menuItems} />;
+    return <ProtectedSidebarBase menuItems={menuItems} />;
 };
