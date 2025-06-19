@@ -24,7 +24,7 @@ export const SignInForm = () => (
             <div className="text-center text-sm mt-6">
                 Don&apos;t have an account?{' '}
                 <Link
-                    href={PATHNAMES.auth.SIGN_UP}
+                    href={PATHNAMES.AUTH.SIGN_UP}
                     className="font-medium text-primary underline-offset-4 hover:underline"
                 >
                     Sign up

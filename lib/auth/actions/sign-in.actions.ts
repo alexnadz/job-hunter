@@ -38,12 +38,12 @@ export const signIn = async (
     }
 
     if (userProfileData?.user_type === 'employer') {
-        redirect(PATHNAMES.employer.DASHBOARD);
+        redirect(PATHNAMES.PROTECTED.EMPLOYER.DASHBOARD);
     } else if (userProfileData?.user_type === 'candidate') {
-        redirect(PATHNAMES.candidate.DASHBOARD);
+        redirect(PATHNAMES.PROTECTED.CANDIDATE.DASHBOARD);
     } else {
         // TODO:
-        redirect(PATHNAMES.protected.ROOT);
+        redirect(PATHNAMES.PROTECTED.ROOT);
     }
 
     return {

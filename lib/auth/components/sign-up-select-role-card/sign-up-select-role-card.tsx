@@ -23,14 +23,14 @@ export const SignUpSelectRoleCard = () => (
 
                 <div className="grid grid-cols-2 gap-4">
                     <RoleSelectionCard
-                        href={PATHNAMES.auth.SIGN_UP_CANDIDATE}
+                        href={PATHNAMES.AUTH.SIGN_UP_CANDIDATE}
                         title="Candidate"
                         description="Looking for jobs"
                         icon={<User className="h-6 w-6" />}
                     />
 
                     <RoleSelectionCard
-                        href={PATHNAMES.auth.SIGN_UP_EMPLOYER}
+                        href={PATHNAMES.AUTH.SIGN_UP_EMPLOYER}
                         title="Employer"
                         description="Hiring talent"
                         icon={<Briefcase className="h-6 w-6" />}
@@ -41,7 +41,7 @@ export const SignUpSelectRoleCard = () => (
             <div className="text-center text-sm">
                 Already have an account?{' '}
                 <Link
-                    href={PATHNAMES.auth.SIGN_IN}
+                    href={PATHNAMES.AUTH.SIGN_IN}
                     className="font-medium text-primary underline-offset-4 hover:underline"
                 >
                     Sign in

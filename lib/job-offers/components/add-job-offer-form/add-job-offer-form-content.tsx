@@ -1,12 +1,13 @@
 'use client';
 
 import { useEffect, startTransition, useActionState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'sonner';
 
-import { Button, Form, FormInput, FormTextarea, ActionResultStatus } from '@/lib/shared';
+import { Button, Form, FormInput, FormTextarea, ActionResultStatus, PATHNAMES } from '@/lib/shared';
 import { JobOfferFormFields, JobOfferSchema } from '@/lib/job-offers/schemas';
 import { addJobOffer } from '@/lib/job-offers/actions';
 
@@ -18,6 +19,8 @@ const JOB_OFFER_DEFAULT_FORM_VALUES: JobOfferFormFields = {
 };
 
 export const AddJobOfferFormContent = () => {
+    const router = useRouter();
+
     const form = useForm<JobOfferFormFields>({
         resolver: zodResolver(JobOfferSchema),
         defaultValues: JOB_OFFER_DEFAULT_FORM_VALUES,
@@ -27,14 +30,19 @@ export const AddJobOfferFormContent = () => {
         status: ActionResultStatus.IDLE,
     });
 
-    const { status: actionStatus } = actionState;
+    const { status: actionStatus, error: actionError } = actionState;
 
     useEffect(() => {
         if (actionStatus === ActionResultStatus.SUCCESS) {
             form.reset(JOB_OFFER_DEFAULT_FORM_VALUES);
             toast.success('Job offer added successfully');
+            router.push(PATHNAMES.PROTECTED.EMPLOYER.JOB_OFFERS);
+        } else if (actionStatus === ActionResultStatus.ERROR && actionError) {
+            toast.error('Error adding job offer', {
+                description: actionError,
+            });
         }
-    }, [actionStatus, form]);
+    }, [actionStatus, actionError, form, router]);
 
     const handleSubmitWithTransition = (jobOfferFormFields: JobOfferFormFields) =>
         startTransition(() => executeAction(jobOfferFormFields));

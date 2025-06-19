@@ -4,13 +4,7 @@ import { ActionResult, ActionResultStatus } from '@/lib/shared/types/action-resu
 import { createClient } from '@/lib/shared/services/supabase/server';
 import { PATHNAMES } from '@/lib/shared/constants';
 import { EmployerSignUpFormFields } from '../schemas/employer-sign-up.schemas';
-
-type Employer = {
-    id: string;
-    email: string;
-    companyName: string;
-    aboutCompany: string;
-};
+import { Employer, insertEmployer, insertProfile } from '@/lib/shared';
 
 export const signUpEmployer = async (
     _: ActionResult<Employer>,
@@ -23,7 +17,7 @@ export const signUpEmployer = async (
             email: formData.email,
             password: formData.password,
             options: {
-                emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}${PATHNAMES.protected.ROOT}`,
+                emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}${PATHNAMES.PROTECTED.ROOT}`,
             },
         });
 
@@ -35,41 +29,26 @@ export const signUpEmployer = async (
             };
         }
 
-        const { data: profileData, error: profileError } = await supabase
-            .from('profiles')
-            .insert({
-                user_id: authData.user.id,
-                user_type: 'employer',
-            })
-            .select('id')
-            .single();
+        const { profileData } = await insertProfile({
+            supabaseClient: supabase,
+            args: {
+                insertProfileData: {
+                    user_id: authData.user.id,
+                    user_type: 'employer',
+                },
+            },
+        });
 
-        if (profileError || !profileData) {
-            console.error('Error creating profile:', profileError);
-            return {
-                error: profileError?.message || 'Failed to create user profile',
-                status: ActionResultStatus.ERROR,
-            };
-        }
-
-        const { data: employerData, error: employerError } = await supabase
-            .from('employers')
-            .insert({
-                user_id: authData.user.id,
-                profile_id: profileData.id,
-                company_name: formData.companyName,
-                about_company: formData.aboutCompany,
-            })
-            .select('*')
-            .single();
-
-        if (employerError) {
-            console.error('Error creating employer profile:', employerError);
-            return {
-                error: employerError.message || 'Failed to create employer profile',
-                status: ActionResultStatus.ERROR,
-            };
-        }
+        const { employerData } = await insertEmployer({
+            supabaseClient: supabase,
+            args: {
+                employerInsertData: {
+                    profile_id: profileData.id,
+                    company_name: formData.companyName,
+                    about_company: formData.aboutCompany,
+                },
+            },
+        });
 
         return {
             data: employerData,

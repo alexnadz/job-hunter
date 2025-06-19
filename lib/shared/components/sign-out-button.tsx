@@ -13,7 +13,7 @@ export const SignOutButton = () => {
     const signOut = async () => {
         const supabase = createClient();
         await (await supabase).auth.signOut();
-        router.push(PATHNAMES.auth.SIGN_IN);
+        router.push(PATHNAMES.AUTH.SIGN_IN);
     };
 
     return (

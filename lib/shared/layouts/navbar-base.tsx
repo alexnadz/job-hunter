@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { ThemeSwitcher } from '@/lib/shared/components';
+
 type NavbarBaseProps = {
     centerLinksContent?: React.ReactNode;
     rightLinksContent?: React.ReactNode;
@@ -16,7 +18,10 @@ export const NavbarBase = ({ centerLinksContent, rightLinksContent }: NavbarBase
                 </div>
                 <div className="flex w-full items-center justify-between">
                     <nav className="flex items-center gap-2">{centerLinksContent}</nav>
-                    <div className="flex items-center gap-2">{rightLinksContent}</div>
+                    <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2">{rightLinksContent}</div>
+                        <ThemeSwitcher />
+                    </div>
                 </div>
             </div>
         </header>

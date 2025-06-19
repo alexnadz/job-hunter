@@ -12,7 +12,7 @@ export const CandidateSidebar = () => {
         <>
             <SidebarMenuItem>
                 <Link
-                    href={PATHNAMES.candidate.DASHBOARD}
+                    href={PATHNAMES.PROTECTED.CANDIDATE.DASHBOARD}
                     className="flex items-center gap-2 p-2 hover:bg-sidebar-accent rounded-md"
                 >
                     <LayoutDashboard className="h-4 w-4" />
@@ -21,7 +21,7 @@ export const CandidateSidebar = () => {
             </SidebarMenuItem>
             <SidebarMenuItem>
                 <Link
-                    href={PATHNAMES.candidate.PROFILE}
+                    href={PATHNAMES.PROTECTED.CANDIDATE.PROFILE}
                     className="flex items-center gap-2 p-2 hover:bg-sidebar-accent rounded-md"
                 >
                     <User className="h-4 w-4" />

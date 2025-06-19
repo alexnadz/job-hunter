@@ -30,10 +30,10 @@ export const SignUpSuccessCard = () => (
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">
             <Button asChild className="w-full">
-                <Link href={PATHNAMES.public.HOME}>Return to Home</Link>
+                <Link href={PATHNAMES.PUBLIC.HOME}>Return to Home</Link>
             </Button>
             <Button variant="outline" asChild className="w-full">
-                <Link href={PATHNAMES.auth.SIGN_IN}>Sign In</Link>
+                <Link href={PATHNAMES.AUTH.SIGN_IN}>Sign In</Link>
             </Button>
         </CardFooter>
     </Card>

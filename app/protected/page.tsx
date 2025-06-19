@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 
 import { createServerClient, SignOutButton } from '@/lib/shared';
 
+// TODO: to remove
 export default async function ProtectedPage() {
     const supabase = await createServerClient();
 

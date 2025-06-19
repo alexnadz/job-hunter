@@ -12,7 +12,7 @@ export const EmployerSidebar = () => {
         <>
             <SidebarMenuItem>
                 <Link
-                    href={PATHNAMES.employer.DASHBOARD}
+                    href={PATHNAMES.PROTECTED.EMPLOYER.DASHBOARD}
                     className="flex items-center gap-2 p-2 hover:bg-sidebar-accent rounded-md"
                 >
                     <LayoutDashboard className="h-4 w-4" />
@@ -21,7 +21,7 @@ export const EmployerSidebar = () => {
             </SidebarMenuItem>
             <SidebarMenuItem>
                 <Link
-                    href={PATHNAMES.employer.JOB_OFFERS}
+                    href={PATHNAMES.PROTECTED.EMPLOYER.JOB_OFFERS}
                     className="flex items-center gap-2 p-2 hover:bg-sidebar-accent rounded-md"
                 >
                     <Briefcase className="h-4 w-4" />

@@ -22,7 +22,7 @@ export const JobOfferList = ({ jobOffers }: JobOfferListProps) => (
                 <p className="text-muted-foreground mb-4">
                     You haven&apos;t posted any job offers yet.
                 </p>
-                <Link href={`${PATHNAMES.employer.JOB_OFFERS}/add-job-offer`}>
+                <Link href={`${PATHNAMES.PROTECTED.EMPLOYER.JOB_OFFERS}/add-job-offer`}>
                     <Button>
                         <PlusCircle className="mr-2 h-4 w-4" />
                         Create Your First Job Offer

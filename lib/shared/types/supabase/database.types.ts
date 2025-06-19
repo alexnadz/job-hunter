@@ -11,7 +11,6 @@ export type Database = {
                     id: string;
                     profile_id: string;
                     updated_at: string;
-                    user_id: string;
                 };
                 Insert: {
                     about_company: string;
@@ -20,7 +19,6 @@ export type Database = {
                     id?: string;
                     profile_id: string;
                     updated_at?: string;
-                    user_id: string;
                 };
                 Update: {
                     about_company?: string;
@@ -29,7 +27,6 @@ export type Database = {
                     id?: string;
                     profile_id?: string;
                     updated_at?: string;
-                    user_id?: string;
                 };
                 Relationships: [
                     {

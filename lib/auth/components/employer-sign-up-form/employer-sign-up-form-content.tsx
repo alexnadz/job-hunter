@@ -36,7 +36,7 @@ export const EmployerSignUpFormContent = () => {
     useEffect(() => {
         if (actionStatus === ActionResultStatus.SUCCESS) {
             form.reset(EMPLOYER_SIGN_UP_DEFAULT_VALUES);
-            router.push(PATHNAMES.auth.SIGN_UP_SUCCESS);
+            router.push(PATHNAMES.AUTH.SIGN_UP_SUCCESS);
         } else if (actionStatus === ActionResultStatus.ERROR && actionError) {
             toast.error('Error creating account', {
                 description: actionError,
