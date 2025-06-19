@@ -1,105 +1,150 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+<h1 align="center">Job Hunter</h1>
 
 <p align="center">
- The fastest way to build apps with Next.js and Supabase
+ A modern platform for job searching and publishing job offers
 </p>
 
 <p align="center">
   <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
+  <a href="#tech-stack"><strong>Tech Stack</strong></a> ·
+  <a href="#project-structure"><strong>Project Structure</strong></a> ·
+  <a href="#getting-started"><strong>Getting Started</strong></a> ·
+  <a href="#development"><strong>Development</strong></a>
 </p>
 <br/>
 
 ## Features
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-    - App Router
-    - Pages Router
-    - Middleware
-    - Client
-    - Server
-    - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Password-based authentication block installed via the [Supabase UI Library](https://supabase.com/ui/docs/nextjs/password-based-auth)
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Components with [shadcn/ui](https://ui.shadcn.com/)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-    - Environment variables automatically assigned to Vercel project
+### Current Features
 
-## Demo
+- **User Authentication**
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+    - Email + Password Registration and Login
+    - Role-based access (Employer/Candidate)
+    - Email verification
+    - Protected routes based on authentication status and user role
 
-## Deploy to Vercel
+- **User Profiles**
 
-Vercel deployment will guide you through creating a Supabase account and project.
+    - Employer profiles with company information
+    - Candidate profiles with personal details
 
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
+- **Job Management (Employers)**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This+starter+configures+Supabase+Auth+to+use+cookies%2C+making+the+user%27s+session+available+throughout+the+entire+Next.js+app+-+Client+Components%2C+Server+Components%2C+Route+Handlers%2C+Server+Actions+and+Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png)
+    - Create and publish job offers
+    - View and manage published job offers
+    - Detailed job offer form with validation
 
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
+- **UI/UX**
+    - Responsive design for all screen sizes
+    - Dark/Light theme support
+    - Role-specific dashboards and navigation
 
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+### Planned Features
 
-## Clone and run locally
+- Job searching and filtering for candidates
+- Application submission system
+- Employer analytics dashboard
+- Candidate resume builder
+- Admin panel for platform management
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+## Tech Stack
 
-2. Create a Next.js app using the Supabase Starter template npx command
+- **Frontend**
 
-    ```bash
-    npx create-next-app --example with-supabase with-supabase-app
-    ```
+    - [Next.js](https://nextjs.org) with App Router
+    - [React](https://reactjs.org)
+    - [TypeScript](https://www.typescriptlang.org)
+    - [Tailwind CSS](https://tailwindcss.com) for styling
+    - [Shadcn UI](https://ui.shadcn.com) for component library
 
-    ```bash
-    yarn create next-app --example with-supabase with-supabase-app
-    ```
+- **Backend**
 
-    ```bash
-    pnpm create next-app --example with-supabase with-supabase-app
-    ```
+    - [Supabase](https://supabase.com) for database and authentication
+    - Next.js Server Actions for API endpoints
+    - Supabase Row Level Security for data protection
 
-3. Use `cd` to change into the app's directory
+- **Development Tools**
+    - ESLint for code linting
+    - Prettier for code formatting
 
-    ```bash
-    cd with-supabase-app
-    ```
+## Project Structure
 
-4. Rename `.env.example` to `.env.local` and update the following:
+```
+/app                   # Next.js App Router pages and layouts
+  /api                 # API routes
+  /auth                # Authentication pages
+  /protected           # Protected routes (requires authentication)
+    /employer          # Employer-specific pages
+    /candidate         # Candidate-specific pages
 
-    ```
-    NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-    NEXT_PUBLIC_SUPABASE_ANON_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
-    ```
+/lib                   # Shared code and utilities
+  /auth                # Authentication related code
+  /job-offers          # Job offer related components and logic
+  /shared              # Shared utilities, components, and types
+    /components        # Reusable UI components
+    /constants         # Application constants
+    /hooks             # Custom React hooks
+    /layouts           # Layout components
+    /providers         # React context providers
+    /queries           # Database queries
+    /services          # Service integrations
+    /types             # TypeScript type definitions
+    /ui                # UI components from Shadcn
+    /utils             # Utility functions
+```
 
-    Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` can be found in [your Supabase project's API settings](https://supabase.com/dashboard/project/_?showConnect=true)
+## Getting Started
 
-5. You can now run the Next.js local development server:
+### Prerequisites
 
-    ```bash
-    npm run dev
-    ```
+- Node.js 18.x or later
+- npm or yarn
+- Supabase account
 
-    The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+### Environment Setup
 
-6. This template comes with the default shadcn/ui style initialized. If you instead want other ui.shadcn styles, delete `components.json` and [re-install shadcn/ui](https://ui.shadcn.com/docs/installation/next)
+1. Clone the repository
 
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
+```bash
+git clone https://github.com/your-username/job-hunter.git
+cd job-hunter
+```
 
-## Feedback and issues
+2. Install dependencies
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
+```bash
+npm install
+# or
+yarn install
+```
 
-## More Supabase examples
+3. Set up environment variables
 
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+Create a `.env.local` file in the root directory with the following variables:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-supabase-service-role-key
+```
+
+4. Run the development server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Development
+
+### Database Migrations
+
+We use Supabase migrations to manage database schema changes. To create a new migration:
+
+```bash
+supabase migration new migration_name
+```

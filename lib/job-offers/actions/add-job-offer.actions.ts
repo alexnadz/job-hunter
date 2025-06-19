@@ -10,6 +10,7 @@ import {
 } from '@/lib/shared';
 import { JobOfferFormFields } from '@/lib/job-offers/schemas';
 
+// TODO: Refactor this action
 export const addJobOffer = async (
     _: ActionResult<JobOffer>,
     formData: JobOfferFormFields,
