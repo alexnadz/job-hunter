@@ -105,3 +105,19 @@ trigger: always_on
 
 - Redirect to: /employer/dashboard
 - Optional toast or confirmation message: “Job offer posted successfully!”
+
+### 4. Home page
+
+#### Features
+
+- Hero section with search job input
+- Facts section
+- Recent Job Offers section (3 cards)
+- Featured Companies section (5 cards)
+- Browse by category section
+- Call to actions section
+
+####Backend Integration
+
+- Insert job offers data into Recent Job Offers section
+- Insert companies data into Featured Companies section

@@ -2,7 +2,6 @@ import { PropsWithChildren } from 'react';
 
 import {
     createServerClient,
-    ProtectedNavbar,
     SidebarProvider,
     SidebarTrigger,
     EmployerSidebar,
@@ -21,7 +20,6 @@ const ProtectedLayout = async ({ children }: PropsWithChildren) => {
 
     return (
         <div className="flex min-h-screen flex-col">
-            <ProtectedNavbar />
             <div className="flex flex-1">
                 <SidebarProvider>
                     <div className="flex w-full">

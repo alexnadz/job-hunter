@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
-import { Button, NavbarBase } from '@/lib/shared';
+import { Button } from '@/lib/shared';
+
+import { NavbarBase } from './navbar-base';
 
 export const AuthNavbar = () => (
     <NavbarBase

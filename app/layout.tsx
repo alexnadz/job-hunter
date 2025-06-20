@@ -5,7 +5,8 @@ import { Analytics } from '@vercel/analytics/next';
 
 import { Toaster } from 'sonner';
 
-import { AppThemeProvider } from '@/lib/shared';
+import { AppThemeProvider, AppNavbar } from '@/lib/shared';
+
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -23,7 +24,10 @@ const RootLayout = ({ children }: PropsWithChildren) => (
     <html lang="en" suppressHydrationWarning>
         <body className={`${geistSans.className}`}>
             <AppThemeProvider>
-                <div className="relative flex min-h-screen flex-col">{children}</div>
+                <div className="relative flex min-h-screen flex-col">
+                    <AppNavbar />
+                    {children}
+                </div>
                 <Toaster position="top-right" richColors />
             </AppThemeProvider>
             <Analytics />

@@ -1,5 +1,21 @@
-const Home = () => {
-    return 'Home';
-};
+import {
+    CategorySection,
+    CompaniesSection,
+    CtaSection,
+    HeroSection,
+    JobOffersSection,
+    StatsSection,
+} from '@/lib/home';
 
-export default Home;
+const HomePage = () => (
+    <main>
+        <HeroSection />
+        <StatsSection />
+        <JobOffersSection />
+        <CategorySection />
+        <CompaniesSection />
+        <CtaSection />
+    </main>
+);
+
+export default HomePage;
