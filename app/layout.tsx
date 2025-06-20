@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
 import { PropsWithChildren } from 'react';
+import { Analytics } from '@vercel/analytics/next';
 
 import { Toaster } from 'sonner';
 
@@ -25,6 +26,7 @@ const RootLayout = ({ children }: PropsWithChildren) => (
                 <div className="relative flex min-h-screen flex-col">{children}</div>
                 <Toaster position="top-right" richColors />
             </AppThemeProvider>
+            <Analytics />
         </body>
     </html>
 );
