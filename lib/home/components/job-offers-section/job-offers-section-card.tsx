@@ -1,8 +1,5 @@
 import { MapPin } from 'lucide-react';
 
-import { Badge } from '@/lib/shared/ui/badge';
-import { Button } from '@/lib/shared/ui/button';
-
 type JobType = 'Full-time' | 'Part-time' | 'Contract' | 'Remote';
 
 type JobOffersSectionCardProps = {
@@ -15,41 +12,41 @@ type JobOffersSectionCardProps = {
 };
 
 // TODO:
-const getBadgeVariant = (type: JobType) => {
-    switch (type) {
-        case 'Full-time':
-            return 'outline';
-        case 'Part-time':
-            return 'secondary';
-        case 'Contract':
-            return 'destructive';
-        case 'Remote':
-            return 'default';
-        default:
-            return 'outline';
-    }
-};
+// const getBadgeVariant = (type: JobType) => {
+//     switch (type) {
+//         case 'Full-time':
+//             return 'outline';
+//         case 'Part-time':
+//             return 'secondary';
+//         case 'Contract':
+//             return 'destructive';
+//         case 'Remote':
+//             return 'default';
+//         default:
+//             return 'outline';
+//     }
+// };
 
-// TODO:
-const getBadgeColor = (type: JobType) => {
-    switch (type) {
-        case 'Full-time':
-            return 'text-green-500';
-        case 'Remote':
-            return 'text-blue-500';
-        case 'Contract':
-            return 'text-orange-500';
-        default:
-            return '';
-    }
-};
+// // TODO:
+// const getBadgeColor = (type: JobType) => {
+//     switch (type) {
+//         case 'Full-time':
+//             return 'text-green-500';
+//         case 'Remote':
+//             return 'text-blue-500';
+//         case 'Contract':
+//             return 'text-orange-500';
+//         default:
+//             return '';
+//     }
+// };
 
 export const JobOffersSectionCard = ({
     title,
     company,
     location,
     salary,
-    jobType,
+    // jobType,
     icon,
 }: JobOffersSectionCardProps) => (
     <div className="rounded-lg border bg-card p-6 shadow-sm transition-all hover:shadow-md">
