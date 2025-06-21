@@ -60,7 +60,7 @@ export const JobOffersSection = () => (
             </div>
 
             <div className="mt-10 flex justify-center">
-                <Button variant="outline" size="lg">
+                <Button variant="default" size="lg">
                     View All Jobs
                 </Button>
             </div>

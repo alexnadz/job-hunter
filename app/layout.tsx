@@ -5,7 +5,7 @@ import { Analytics } from '@vercel/analytics/next';
 
 import { Toaster } from 'sonner';
 
-import { AppThemeProvider, AppNavbar } from '@/lib/shared';
+import { AppThemeProvider, AppNavbar, Footer } from '@/lib/shared';
 
 import './globals.css';
 
@@ -27,6 +27,7 @@ const RootLayout = ({ children }: PropsWithChildren) => (
                 <div className="relative flex min-h-screen flex-col">
                     <AppNavbar />
                     {children}
+                    <Footer />
                 </div>
                 <Toaster position="top-right" richColors />
             </AppThemeProvider>
