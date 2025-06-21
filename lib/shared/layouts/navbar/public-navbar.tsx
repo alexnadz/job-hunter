@@ -6,7 +6,7 @@ import { NavbarLink } from './navbar-link';
 export const PublicNavbar = () => {
     const centerLinksContent = (
         <>
-            <NavbarLink href="#">Find Jobs</NavbarLink>
+            <NavbarLink href={PATHNAMES.PUBLIC.JOB_SEARCH}>Find Jobs</NavbarLink>
             <NavbarLink href="#">Post Job</NavbarLink>
             <NavbarLink href="#">Companies</NavbarLink>
             <NavbarLink href="#">About</NavbarLink>

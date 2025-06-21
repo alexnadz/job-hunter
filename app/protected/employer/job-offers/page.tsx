@@ -9,7 +9,7 @@ import {
     getEmployerForCurrentUser,
     getJobOffersByEmployerId,
 } from '@/lib/shared';
-import { JobOfferList } from '@/lib/job-offers';
+import { JobOfferList } from '@/lib/job-offers/employer-job-offers';
 
 const EmployerJobOffersPage = async () => {
     const supabase = await createServerClient();

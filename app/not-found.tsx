@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { FileSearch } from 'lucide-react';
 
-import { Button, PageInfoLayout } from '@/lib/shared';
+import { Button, PageErrorLayout } from '@/lib/shared';
 
 const NotFound = () => (
-    <PageInfoLayout
+    <PageErrorLayout
         Icon={FileSearch}
         title="404"
         subtitle="Page Not Found"
@@ -15,7 +15,7 @@ const NotFound = () => (
                 <Link href="/">Return to Home</Link>
             </Button>
         </div>
-    </PageInfoLayout>
+    </PageErrorLayout>
 );
 
 export default NotFound;

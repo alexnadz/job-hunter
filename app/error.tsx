@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { AlertTriangle } from 'lucide-react';
 
-import { Button, PageInfoLayout } from '@/lib/shared';
+import { Button, PageErrorLayout } from '@/lib/shared';
 
 type ErrorProps = { error: Error & { digest?: string }; reset: () => void };
 
@@ -13,7 +13,7 @@ const Error = ({ error, reset }: ErrorProps) => {
     }, [error]);
 
     return (
-        <PageInfoLayout
+        <PageErrorLayout
             Icon={AlertTriangle}
             iconClassName="h-12 w-12 text-red-600"
             iconContainerClassName="rounded-full bg-red-100 p-6"
@@ -31,7 +31,7 @@ const Error = ({ error, reset }: ErrorProps) => {
                     Try again
                 </Button>
             </div>
-        </PageInfoLayout>
+        </PageErrorLayout>
     );
 };
 

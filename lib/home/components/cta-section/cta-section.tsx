@@ -17,7 +17,7 @@ export const CtaSection = () => (
                     variant="default"
                     className="bg-white text-blue-500 hover:bg-gray-100"
                 >
-                    <a href={PATHNAMES.PUBLIC.HOME}>Browse Jobs</a>
+                    <a href={PATHNAMES.PUBLIC.JOB_SEARCH}>Browse Jobs</a>
                 </Button>
                 <Button
                     asChild

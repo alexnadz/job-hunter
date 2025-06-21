@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { LucideIcon } from 'lucide-react';
 
-type PageInfoLayoutProps = {
+type PageErrorLayoutProps = {
     Icon: LucideIcon;
     iconClassName?: string;
     iconContainerClassName?: string;
@@ -11,7 +11,7 @@ type PageInfoLayoutProps = {
     children?: ReactNode;
 };
 
-export const PageInfoLayout = ({
+export const PageErrorLayout = ({
     Icon,
     iconClassName = 'h-12 w-12 text-primary',
     iconContainerClassName = 'rounded-full bg-muted p-6',
@@ -19,7 +19,7 @@ export const PageInfoLayout = ({
     subtitle,
     description,
     children,
-}: PageInfoLayoutProps) => (
+}: PageErrorLayoutProps) => (
     <div className="flex h-[80vh] flex-col items-center justify-center text-center">
         <div className="space-y-6">
             <div className="flex flex-col items-center space-y-4">

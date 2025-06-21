@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { PlusCircle } from 'lucide-react';
 
 import { Button, PATHNAMES, JobOffer } from '@/lib/shared';
-import { JobOfferListItem } from '@/lib/job-offers';
+import { JobOfferListItem } from '@/lib/job-offers/employer-job-offers';
 
 type JobOfferListProps = {
     jobOffers: JobOffer[] | null;

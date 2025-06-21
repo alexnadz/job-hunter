@@ -8,8 +8,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'sonner';
 
 import { Button, Form, FormInput, FormTextarea, ActionResultStatus, PATHNAMES } from '@/lib/shared';
-import { JobOfferFormFields, JobOfferSchema } from '@/lib/job-offers/schemas';
-import { addJobOffer } from '@/lib/job-offers/actions';
+import { JobOfferFormFields, JobOfferSchema } from '@/lib/job-offers/employer-job-offers/schemas';
+import { addJobOffer } from '@/lib/job-offers/employer-job-offers/actions';
 
 const JOB_OFFER_DEFAULT_FORM_VALUES: JobOfferFormFields = {
     title: '',

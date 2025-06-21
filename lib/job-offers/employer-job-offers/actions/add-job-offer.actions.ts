@@ -8,7 +8,7 @@ import {
     JobOfferInsert,
     getEmployerForCurrentUser,
 } from '@/lib/shared';
-import { JobOfferFormFields } from '@/lib/job-offers/schemas';
+import { JobOfferFormFields } from '@/lib/job-offers/employer-job-offers/schemas';
 
 // TODO: Refactor this action
 export const addJobOffer = async (

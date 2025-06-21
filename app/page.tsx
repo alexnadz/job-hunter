@@ -3,9 +3,9 @@ import {
     CompaniesSection,
     CtaSection,
     HeroSection,
-    JobOffersSection,
     StatsSection,
 } from '@/lib/home';
+import { JobOffersSection } from '@/lib/job-offers/home-job-offers';
 
 const HomePage = () => (
     <main>

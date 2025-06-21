@@ -1,6 +1,7 @@
 export const PATHNAMES = {
     PUBLIC: {
         HOME: '/',
+        JOB_SEARCH: '/job-search',
     },
 
     AUTH: {

@@ -1,4 +1,4 @@
-import { JobSearchForm } from './job-search-form';
+import { JobSearchBar } from '@/lib/job-offers/home-job-offers';
 
 export const HeroSection = () => (
     <section className="bg-gradient-to-b from-blue-500 to-blue-600 py-16 md:py-24">
@@ -11,7 +11,7 @@ export const HeroSection = () => (
                 aspirations
             </p>
 
-            <JobSearchForm />
+            <JobSearchBar />
         </div>
     </section>
 );
