@@ -1,5 +1,8 @@
+import Link from 'next/link';
+
 import { createClient } from '@/lib/shared/services/supabase/server';
 import { getJobOffersByFilters } from '@/lib/job-offers/shared';
+import { generateJobOfferPath } from '@/lib/shared';
 
 import { JobSearchCard } from './job-search-card';
 
@@ -21,9 +24,15 @@ export const JobSearchResults = async ({ searchFilter }: JobSearchResultsProps) 
                 <h2 className="text-lg font-semibold">{jobOffersData.length} Jobs Found</h2>
             </div>
 
-            <div className="space-y-4">
+            <div className="flex flex-col space-y-4">
                 {jobOffersData.map((searchedJobOffer) => (
-                    <JobSearchCard key={searchedJobOffer.id} job={searchedJobOffer} />
+                    <Link
+                        key={searchedJobOffer.id}
+                        href={generateJobOfferPath(searchedJobOffer.id)}
+                        target="_blank"
+                    >
+                        <JobSearchCard job={searchedJobOffer} />
+                    </Link>
                 ))}
             </div>
         </div>

@@ -3,6 +3,8 @@ import { QueryParams } from '@/lib/shared/types';
 
 const GET_JOB_OFFERS_BY_SEARCH_FILTER_ERROR_MESSAGE =
     'Unable to fetch job offers at this time. Please try again later.';
+const GET_JOB_OFFER_DETAILS_ERROR_MESSAGE =
+    'Unable to fetch job offer details at this time. Please try again later.';
 
 export const getJobOffersByFilters = async ({
     supabaseClient,
@@ -43,6 +45,32 @@ export const getJobOffersByFilters = async ({
     } catch (error) {
         console.error(error);
         throw new Error(GET_JOB_OFFERS_BY_SEARCH_FILTER_ERROR_MESSAGE);
+    }
+};
+
+export const getJobOfferDetails = async ({ supabaseClient, args }: QueryParams<{ id: string }>) => {
+    const { id } = args;
+
+    try {
+        const { data: jobOfferData, error: jobOfferError } = await supabaseClient
+            .from('job_offers')
+            .select(
+                'id, title, description, salary_min, salary_max, created_at, employers (id, company_name, about_company)',
+            )
+            .eq('id', id)
+            .single();
+
+        if (jobOfferError) {
+            console.error(jobOfferError);
+            throw new Error(jobOfferError.message);
+        }
+
+        return {
+            jobOfferData,
+        };
+    } catch (error) {
+        console.error(error);
+        throw new Error(GET_JOB_OFFER_DETAILS_ERROR_MESSAGE);
     }
 };
 

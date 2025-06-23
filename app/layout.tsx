@@ -29,9 +29,9 @@ const RootLayout = ({ children }: PropsWithChildren) => (
                     {children}
                     <Footer />
                 </div>
+                <Analytics />
                 <Toaster position="top-right" richColors />
             </AppThemeProvider>
-            <Analytics />
         </body>
     </html>
 );

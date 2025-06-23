@@ -2,7 +2,7 @@ import { Checkbox, Label } from '@/lib/shared';
 
 // TODO: to refactor
 export const JobSearchFilters = () => (
-    <div className="rounded-lg border bg-white p-6">
+    <div className="rounded-lg border bg-card p-6">
         <h2 className="mb-4 text-lg font-semibold">Filters</h2>
 
         {/* Job Type */}

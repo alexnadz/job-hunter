@@ -30,6 +30,8 @@ export const PATHNAMES = {
     },
 } as const;
 
+export const generateJobOfferPath = (id: string) => `${PATHNAMES.PUBLIC.JOB_SEARCH}/${id}`;
+
 export const EMPLOYER_PATHS = [
     PATHNAMES.PROTECTED.EMPLOYER.DASHBOARD,
     PATHNAMES.PROTECTED.EMPLOYER.JOB_OFFERS,

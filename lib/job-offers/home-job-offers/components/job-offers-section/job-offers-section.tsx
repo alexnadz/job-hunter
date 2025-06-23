@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { PATHNAMES, Button } from '@/lib/shared';
+import { PATHNAMES, Button, generateJobOfferPath } from '@/lib/shared';
 import { createClient } from '@/lib/shared/services/supabase/server';
 import { getJobOffersByFilters } from '@/lib/job-offers/shared/queries';
 
@@ -49,7 +49,7 @@ export const JobOffersSection = async () => {
         <section className="py-16">
             <div className="container mx-auto">
                 <div className="mb-10 text-center">
-                    <h2 className="mb-2 text-3xl font-bold tracking-tight">Featured Jobs</h2>
+                    <h2 className="mb-2 text-3xl font-bold tracking-tight">Recently Added Jobs</h2>
                     <p className="text-muted-foreground">
                         Discover handpicked opportunities from top companies
                     </p>
@@ -57,7 +57,9 @@ export const JobOffersSection = async () => {
 
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {jobOffersData.map((job) => (
-                        <JobOffersSectionCard key={job.id} jobOffer={job} />
+                        <Link key={job.id} href={generateJobOfferPath(job.id)}>
+                            <JobOffersSectionCard jobOffer={job} />
+                        </Link>
                     ))}
                 </div>
 

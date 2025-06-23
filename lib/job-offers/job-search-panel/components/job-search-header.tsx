@@ -15,7 +15,7 @@ export const JobSearchHeader = ({ searchFilter }: JobSearchHeaderProps) => {
     });
 
     return (
-        <div className="rounded-lg bg-white p-6 shadow-sm">
+        <div className="rounded-lg bg-card p-6 shadow-sm">
             <h1 className="mb-6 text-2xl font-bold">Find Your Dream Job</h1>
             <div className="flex flex-col gap-4 sm:flex-row">
                 <div className="relative flex-1">
