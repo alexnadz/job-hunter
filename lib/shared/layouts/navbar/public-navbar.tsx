@@ -9,7 +9,7 @@ export const PublicNavbar = () => {
             <NavbarLink href={PATHNAMES.PUBLIC.JOB_SEARCH}>Find Jobs</NavbarLink>
             <NavbarLink href={PATHNAMES.PROTECTED.EMPLOYER.POST_JOB}>Post Job</NavbarLink>
             <NavbarLink href={PATHNAMES.PUBLIC.EMPLOYER_SEARCH}>Companies</NavbarLink>
-            <NavbarLink href="#">About</NavbarLink>
+            <NavbarLink href={PATHNAMES.PUBLIC.ABOUT}>About</NavbarLink>
         </>
     );
 

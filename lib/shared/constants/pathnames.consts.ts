@@ -3,6 +3,7 @@ export const PATHNAMES = {
         HOME: '/',
         JOB_SEARCH: '/job-search',
         EMPLOYER_SEARCH: '/employer-search',
+        ABOUT: '/about',
     },
 
     AUTH: {
