@@ -6,7 +6,7 @@ type JobSearchProps = {
     searchFilter?: string;
 };
 
-export const JobSearch = ({ searchFilter }: JobSearchProps) => (
+export const JobSearchPanel = ({ searchFilter }: JobSearchProps) => (
     <div className="container mx-auto py-8">
         <JobSearchHeader searchFilter={searchFilter} />
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-4">

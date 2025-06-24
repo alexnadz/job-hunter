@@ -2,6 +2,7 @@ export const PATHNAMES = {
     PUBLIC: {
         HOME: '/',
         JOB_SEARCH: '/job-search',
+        EMPLOYER_SEARCH: '/employer-search',
     },
 
     AUTH: {
@@ -21,6 +22,7 @@ export const PATHNAMES = {
             ROOT: '/protected/employer',
             DASHBOARD: '/protected/employer/dashboard',
             JOB_OFFERS: '/protected/employer/job-offers',
+            POST_JOB: '/protected/employer/job-offers/add-job-offer',
         },
         CANDIDATE: {
             ROOT: '/protected/candidate',

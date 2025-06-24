@@ -7,15 +7,15 @@ export const PublicNavbar = () => {
     const centerLinksContent = (
         <>
             <NavbarLink href={PATHNAMES.PUBLIC.JOB_SEARCH}>Find Jobs</NavbarLink>
-            <NavbarLink href="#">Post Job</NavbarLink>
-            <NavbarLink href="#">Companies</NavbarLink>
+            <NavbarLink href={PATHNAMES.PROTECTED.EMPLOYER.POST_JOB}>Post Job</NavbarLink>
+            <NavbarLink href={PATHNAMES.PUBLIC.EMPLOYER_SEARCH}>Companies</NavbarLink>
             <NavbarLink href="#">About</NavbarLink>
         </>
     );
 
     const rightLinksContent = (
         <>
-            <Button asChild variant="ghost" size="sm">
+            <Button asChild variant="outline-on-light" size="sm">
                 <a href={PATHNAMES.AUTH.SIGN_IN}>Sign In</a>
             </Button>
             <Button asChild size="sm">

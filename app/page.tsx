@@ -1,10 +1,5 @@
-import {
-    CategorySection,
-    CompaniesSection,
-    CtaSection,
-    HeroSection,
-    StatsSection,
-} from '@/lib/home';
+import { CategorySection, CtaSection, HeroSection, StatsSection } from '@/lib/home';
+import { EmployersSection } from '@/lib/employers/home-employers';
 import { JobOffersSection } from '@/lib/job-offers/home-job-offers';
 
 const HomePage = () => (
@@ -13,7 +8,7 @@ const HomePage = () => (
         <StatsSection />
         <JobOffersSection />
         <CategorySection />
-        <CompaniesSection />
+        <EmployersSection />
         <CtaSection />
     </main>
 );

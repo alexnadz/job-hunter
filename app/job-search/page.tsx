@@ -1,4 +1,4 @@
-import { JOB_SEARCH_FILTERS, JobSearch } from '@/lib/job-offers/job-search-panel';
+import { JOB_SEARCH_FILTERS, JobSearchPanel } from '@/lib/job-offers/job-search-panel';
 
 type JobSearchPageProps = {
     params: Promise<{ slug: string }>;
@@ -8,7 +8,7 @@ type JobSearchPageProps = {
 const JobSearchPage = async ({ searchParams }: JobSearchPageProps) => {
     const searchFilter = (await searchParams).search;
 
-    return <JobSearch searchFilter={searchFilter} />;
+    return <JobSearchPanel searchFilter={searchFilter} />;
 };
 
 export default JobSearchPage;

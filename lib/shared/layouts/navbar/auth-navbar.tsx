@@ -14,7 +14,7 @@ export const AuthNavbar = () => (
                     </Button>
                 </Link>
                 <Link href="/auth/sign-in">
-                    <Button variant="outline" size="sm">
+                    <Button variant="outline-on-light" size="sm">
                         Sign In
                     </Button>
                 </Link>
