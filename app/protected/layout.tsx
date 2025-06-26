@@ -3,7 +3,6 @@ import { PropsWithChildren } from 'react';
 import {
     createServerClient,
     SidebarProvider,
-    SidebarTrigger,
     EmployerSidebar,
     CandidateSidebar,
     UserType,
@@ -23,12 +22,9 @@ const ProtectedLayout = async ({ children }: PropsWithChildren) => {
             <div className="flex flex-1">
                 <SidebarProvider>
                     <div className="flex w-full">
-                        {<UserTypeBasedSidebar />}
+                        <UserTypeBasedSidebar />
                         {/* TODO: temporary */}
-                        <main className="flex-1 md:ml-[160px]">
-                            <SidebarTrigger />
-                            {children}
-                        </main>
+                        <main className="flex-1 md:ml-[160px]">{children}</main>
                     </div>
                 </SidebarProvider>
             </div>

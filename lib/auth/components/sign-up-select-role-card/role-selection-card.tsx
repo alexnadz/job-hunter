@@ -12,12 +12,12 @@ type RoleSelectionCardProps = {
 export const RoleSelectionCard = ({ href, title, description, icon }: RoleSelectionCardProps) => (
     <Link href={href} className="w-full">
         <Button
-            variant="outline"
-            className="w-full h-24 flex flex-col items-center justify-center gap-2"
+            variant="outline-on-light"
+            className="w-full h-24 flex flex-col items-center justify-center gap-2 text-foreground"
         >
             {icon}
             <div className="flex flex-col items-center">
-                <span className="font-medium">{title}</span>
+                <span className="font-medium text-foreground">{title}</span>
                 <span className="text-xs text-muted-foreground">{description}</span>
             </div>
         </Button>
